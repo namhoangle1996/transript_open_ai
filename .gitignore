@@ -1,0 +1,13 @@
+.DS_Store
+
+# dist directory
+dist/
+
+# VS Code
+.vscode
+
+# npm
+package-lock.json
+node_modules
+
+src/random

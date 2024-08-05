@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Transcript & Summary",
+  "version": "1.0",
+  "description": "Extract and summary YouTube transcripts using LLM",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "https://translate.google.com/"
+  ],
+  "background": {
+    "service_worker": "background.bundle.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://chatgpt.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": ["index.bundle.js"]
+    }
+  ],
+  "options_page": "options.html"
+}

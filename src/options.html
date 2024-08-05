@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extension Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #ffffff; color: #333333; }
+        .form-check-input:checked { background-color: #0d6efd; border-color: #0d6efd; }
+        .btn-outline-secondary { 
+            color: #495057; 
+            border-color: #6c757d;
+            background-color: #ffffff;
+        }
+        .btn-outline-secondary:hover, 
+        .btn-outline-secondary:focus, 
+        .btn-check:checked + .btn-outline-secondary { 
+            background-color: #6c757d; 
+            color: #ffffff; 
+        }
+        .form-control, .form-select {
+            background-color: #f8f9fa;
+            color: #333333;
+            border-color: #ced4da;
+        }
+        .text-muted { color: #6c757d !important; }
+        .prompt-controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 10px;
+        }
+        .prompt-controls button {
+            margin-left: 5px;
+        }
+        .prompt-item {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .prompt-item input {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Extension Settings</h1>
+        
+        <div class="mb-4">
+            <h5>Prompt for Summary</h5>
+            <p>You can customize the prompt for summary.</p>
+            <textarea class="form-control mb-2" rows="3" placeholder="{{Prompt}}"></textarea>
+            <p>Input format:</p>
+            <p>Prompt: {{Prompt}}</p>
+            <p>Title: {{Title}}</p>
+            <p>Transcript: {{Transcript}}</p>
+        </div>
+
+        <div class="mb-4">
+            <h5>Example Prompts:</h5>
+            <ul>
+                <li>What's key takeaways from the following?</li>
+                <li>Extract the gist of the following.</li>
+                <li>Summarize the following for a 6th grade audience.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+          <h5>Follow-up Prompts</h5>
+          <p>You can set up (up to 10) follow-up prompts. These follow-up prompts will be shown near the prompt inbox.</p>
+          <div class="prompt-controls">
+              <button id="decreasePrompts" class="btn btn-outline-secondary">-</button>
+              <span id="promptCount" class="mx-2">0</span>
+              <button id="increasePrompts" class="btn btn-outline-secondary">+</button>
+              <button id="savePrompts" class="btn btn-primary ms-3">Save</button>
+              <span id="saveStatus" class="ms-2"></span>
+          </div>
+          <div id="promptContainer">
+              <!-- Prompt inputs will be dynamically added here -->
+          </div>
+      </div>
+    </div>
+
+    <script src="options.bundle.js"></script>
+</body>
+</html>
